@@ -1,0 +1,131 @@
+Bank Street OAuth
+
+***** ICP ***** Details
+11:10:07 AM: Machine Details
+
+LB=9.184.115.86
+root/Welcome2ibm
+
+Role			myclusterhcl1
+
+Master + node 	9.121.242.180
+
+Proxy Node 		9.121.242.183
+
+management node 9.121.242.192
+
+VA node 		9.121.242.194
+
+Worker node-1	9.121.242.195
+
+worker node-2	9.121.242.196
+
+worker node-3	9.121.242.197
+
+NFS Server		9.121.242.198
+
+
+Dashboard: https://9.121.242.180:8443
+
+admin/admin
+
+ssh login root/root123
+
+sysctl -w vm.max_map_count=1048575
+
+
+kubectl create secret docker-registry bankstreet-image-pull-secret --docker-server=myclusterhcl1.icp:8500 --docker-username=admin --docker-password=adminth --docker-email=null --namespace bankstreet-oauth-app  --dry-run -o yaml
+
+
+certificate
+https://www.java67.com/2012/09/keytool-command-examples-java-add-view-certificate-ssl.html
+
+https://support.cloudbees.com/hc/en-us/articles/217078498-PKIX-path-building-failed-error-message
+keytool -list -keystore cacerts
+keytool -import -alias apiconnect-gan  -file self.cer -keystore cacerts
+keytool -import -alias apiconnect-gan -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/security/cacerts -file /Users/jeyagandhi/Gandhi/Projects/020-BankstreetOAuth/api-connect-demo/IBMAPIConnect.crt
+sudo keytool -import -alias apiconnect-gan -keystore $JAVA_HOME/jre/lib/security/cacerts -file /Users/jeyagandhi/Gandhi/Projects/020-BankstreetOAuth/IBMAPIConnect.crt
+
+-Djavax.net.ssl.trustStore=$JAVA_HOME/jre/lib/security/cacert
+-Djavax.net.ssl.trustStorePassword=changeit
+
+https://github.com/spring-projects/spring-boot/issues/10293
+GOOD CODE
+https://nofluffjuststuff.com/blog/jason_lee1/2013/07/a_simple_oauth2_client_and_server_example_part_i
+https://apache.googlesource.com/oltu/+/50ab889ef9e0bcc76c76ebeda63b2391146aa373/oauth-2.0/client/src/test/java/org/apache/oltu/oauth2/client/OAuthClientTest.java
+https://www.programcreek.com/java-api-examples/?api=org.apache.oltu.oauth2.client.OAuthClient
+https://www.programcreek.com/java-api-examples/?api=org.apache.oltu.oauth2.client.request.OAuthClientRequest
+https://www.codota.com/code/java/methods/org.apache.oltu.oauth2.client.request.OAuthClientRequest$AuthenticationRequestBuilder/buildQueryMessage
+https://gist.github.com/adrianmaurer/4673944/
+
+https://developer.okta.com/blog/2017/03/21/spring-boot-oauth
+
+https://oauth.net/2/grant-types/
+https://oauth.net/2/grant-types/authorization-code/
+https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type
+https://www.oauth.com/oauth2-servers/access-tokens/authorization-code-request/
+https://aaronparecki.com/oauth-2-simplified/#web-server-apps
+https://aaronparecki.com/oauth-2-simplified/#web-server-apps
+
+
+calling api
+https://www.javainuse.com/spring/spring-boot-oauth-access-token
+
+ERROR
+------
+2019-06-19 15:04:12.336  INFO 25476 --- [nio-8042-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-06-19 15:04:12.355  INFO 25476 --- [nio-8042-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+intRate3 Started
+Visit: https://api-9.121.242.183.nip.io/biat/demo/demo/oauth2/authorize?scope=demo_scope_1&response_type=code&redirect_uri=https%3A%2F%2Fdemoonlineauth.mybluemix.net&client_id=8a96f24681c3229ad766fbc458389b9a
+Now enter the OAuth code you have received in redirect uri
+AAKtsxHxycUraLo8rl-VWu34xG_MeRk6zyDFSygtNOR2nCpfBjkTr0cO_yfd0BcOv7Mp3OhOJz4vFrZSo7sa-hMMqDqnENhRohEyLqOOdTuSPw
+ error: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No name matching api-9.121.242.183.nip.io found
+intRate3 completed
+
+========================================================
+
+GOWDHAMAN JAYASEELAN:https://demoonlineauth.mybluemix.net/?code=AALYQmEb-h2TeM0HZeSQDTKfwfw8pEyWrFx6ZBr85e3QR32bRrHYFQq55Dnb6l22ju_EAUd_j7G7DQPTuD5LlV9K7uC7NCgEtWESZawLsTq3Uw
+11:41:29 AM: https://portal-9.121.242.183.nip.io/biat/demo/
+11:42:14 AM: acmebazar-admn/Passw0rd
+11:42:38 AM: Order-Product 1.0.1(is OAuth Enabled)
+11:43:47 AM: For DemoApp
+11:44:08 AM: Client-ID
+8a96f24681c3229ad766fbc458389b9a
+
+Client-Secret
+94039c73468f0647e68418f133ce0500
+11:45:37 AM: In Yout HTTP client Header
+11:45:39 AM: GET https://api-9.121.242.183.nip.io/biat/demo/order-api/1.0.1/orderby/200
+Headers:
+Accept: application/json
+Authorization: Bearer AAIgOGE5NmYyNDY4MWMzMjI5YWQ3NjZmYmM0NTgzODliOWEnPbMttGAof55CB_9LH-hMxsPTmLAyT4HiNQLjOvCcvE9tXEnWbMgSwL7e30Wmi46-zfWLRmApvI08-ybc4CMkw3ZsFQnCiH8TmReKk-b55xVMghimu3pjTOXZWERflvs
+X-IBM-Client-Id: 8a96f24681c3229ad766fbc458389b9a
+
+========================================================
+
+openssl s_client -connect api-9.121.242.183.nip.io -servername api-9.121.242.183.nip.io < /dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > public.crt
+
+
+
+Select
+
+curl --request GET --url https://api-9.121.242.183.nip.io/biat/demo/order-api/1.0.1/orderby/200 \
+  --header 'accept: application/json' \
+  --header 'authorization: Bearer REPLACE_BEARER_TOKEN' \
+  --header 'x-ibm-client-id: Client ID'
+
+
+
+  // OkHttpClient from http://square.github.io/okhttp/
+
+OkHttpClient client = new OkHttpClient();
+
+Request request = new Request.Builder()
+  .url("https://api-9.121.242.183.nip.io/biat/demo/order-api/1.0.1/orderby/REPLACE_ORDERID")
+  .get()
+  .addHeader("x-ibm-client-id", "Client ID")
+  .addHeader("authorization", "Bearer REPLACE_BEARER_TOKEN")
+  .addHeader("accept", "application/json")
+  .build();
+
+Response response = client.newCall(request).execute();
