@@ -7,6 +7,10 @@ import { ProductUpdateComponent } from './product/product-update/product-update.
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 const routes: Routes = [
+  { path: '',
+  redirectTo: '/product',
+  pathMatch: 'full'
+  },
   {
     path: 'product',
     component: ProductListComponent,
@@ -27,10 +31,7 @@ const routes: Routes = [
     component: ProductUpdateComponent,
     data: { title: 'Product Update' }
   },
-  { path: '',
-    redirectTo: '/product',
-    pathMatch: 'full'
-  }
+
   ];
 
 @NgModule({

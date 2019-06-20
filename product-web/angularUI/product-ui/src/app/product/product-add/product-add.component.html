@@ -1,3 +1,15 @@
-<p>
-  product-add works!
-</p>
+<div>
+  <h2>Product Add</h2>
+  <div>
+    <label>Product Category:
+      <input [(ngModel)]="productData.category" placeholder="Product Category"/>
+    </label><br>
+    <label>Product Name:
+      <input [(ngModel)]="productData.name" placeholder="Product Name"/>
+    </label><br>
+    <label>Product Price:
+      <input [(ngModel)]="productData.price" placeholder="Product Price"/>
+    </label><br>
+  </div>
+  <button (click)="addProduct()">Save</button>
+</div>

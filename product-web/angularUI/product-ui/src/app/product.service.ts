@@ -56,6 +56,9 @@ export class ProductService {
   }
 
   getProducts(): Observable<any> {
+    console.log("ProductService getProducts: 1" );
+    console.log("ProductService getProducts: 2 : " + this.apiServiceURL);
+
     return this.http.get(this.apiServiceURL + '/api/product', httpOptions).pipe(
       map(this.extractData));
   }
