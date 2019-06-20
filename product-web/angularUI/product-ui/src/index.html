@@ -97,12 +97,12 @@
   }
   .panel-footer .btn {
     margin: 15px 0;
-    background-color: #f4511e;
+    background-color: rgb(16, 90, 140);
     color: #fff;
   }
   .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color: rgb(16, 90, 140);;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -144,7 +144,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <a class="navbar-brand text-left" href="#myPage">Product Pro</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -161,29 +161,8 @@
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
-    <div class="col-sm-8">
-      <h2>About Company Page</h2>
-      <h4>Lorem ipsum..</h4>      
-      <p>Lorem ipsum..</p>
-      <button class="btn btn-default btn-lg">Get in Touch</button>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>      
-      <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
-      <app-root></app-root>
-    </div>
+    <div class="col-sm-12">
+      <img src="/assets/img/home-page.png" alt="Architecture" width="1500" height="800">
   </div>
 </div>
 
@@ -194,14 +173,25 @@
   <br>
      <app-root>
      
-     <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to Product Pro !!!!!!
-  </h1>
-</div>
-<router-outlet></router-outlet>
+        <!--The content below is only a placeholder and can be replaced.-->
+    <div style="text-align:center">
+      <h1>
+        Welcome to Product Pro !!!!!!
+      </h1>
+    </div>
 
+    <div style="text-align:center">
+  <div class="container">
+    <div class="row">
+        <h2>Product List</h2>
+        <p><button (click)="products()"> View Product List </button></p>
+        <a routerLink="/product">View Product List</a>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
      </app-root>
 
   <div class="row">
@@ -218,26 +208,27 @@
   <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>MENS WEAR</h4>
-      <p>40 to 80% off</p>
+      <h4>Bright Ideas</h4>
+      <p>ring summer into your space with vibrant colors, patterns, and shapes, inspired by the earth and sky. Brighten every corner of your home with our eclectic collection of traditional and modern home accents</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>WOMENS WEAR</h4>
-      <p>Upto 80% off</p>
+      <h4>Handbags</h4>
+      <p>Indulge in luxurious leather and sumptuous suede handbags, in colors that will take your breath away. From oversized totes to elegant clutches, you'll find your perfect match at a perfect price in our handcrafted designer collection.</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>KIDS WEAR</h4>
-      <p>50 to 80% off</p>
+      <h4>Flat-out Comfort</h4>
+      <p>Beautifully designed, soft leather shoes with an elasticized edge for perfect fit. Lightweight and durable, these flats will provide all-day comfort with their cushioned insole and soft lining. Multi-colored accent lace combinations and patterns are available as a special order. </p>
     </div>
   </div>
   <br><br>
   <div class="row">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>JWELLERY</h4>
-      <p>Upto 40% off</p>
+      <h4>Kids' Stuff</h4>
+      <p>Summer style is all about fun prints, bright colors, comfort, and durability. Stock up on our easy-to-wear and affordable fashions for kids. Spend $100* or more, and earn a $25 gift certificate.
+*Before taxes. Gift certificates are redeemable on your next visit. </p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-certificate logo-small"></span>
@@ -246,8 +237,8 @@
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">SUN GLASSES</h4>
-      <p>Upto 30% off</p>
+      <h4 style="color:#303030;">50% Off Polos</h4>
+      <p>Select from our collection of modern, easy-to-coordinate polo shirts to create a smart but casual look. Available in a kaleidoscope of colors, with superior shape retention and wrinkle resistance. Free shipping on purchases over $60 before taxes. </p>
     </div>
   </div>
 </div>
