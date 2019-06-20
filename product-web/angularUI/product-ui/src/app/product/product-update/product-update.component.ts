@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-product-update',
   templateUrl: './product-update.component.html',
-  styleUrls: ['./product-update.component.css']
+  styleUrls: ['./product-update.component.css', './../../app.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
 

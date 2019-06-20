@@ -34,7 +34,6 @@ export class ProductService implements OnInit{
 
         return this.http.get(this.apiServiceURL + '/api/product', httpOptions).pipe(
           map(this.extractData));
-        console.log("ProductService loadEndPointURL 3 : endpoint URL : " + this.apiServiceURL );
       })
     )
    }
