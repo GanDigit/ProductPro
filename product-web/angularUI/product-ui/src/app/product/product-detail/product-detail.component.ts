@@ -14,10 +14,12 @@ export class ProductDetailComponent implements OnInit {
   product:any;
 
   ngOnInit() {
-    this.productService.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
-      console.log(data);
-      this.product = data;
-    });
+    // this.productService.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
+    //   console.log(data);
+    //   this.product = data;
+    // });
   }
-  
+  products() {
+    this.router.navigate(['/product']);
+  }
 }

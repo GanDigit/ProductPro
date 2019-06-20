@@ -263,7 +263,6 @@ var ProductService = /** @class */ (function () {
             console.log("ProductService  loadEndPointURL 2: ");
             _this.apiServiceURL = apiResponse.url;
             return _this.http.get(_this.apiServiceURL + '/api/product', httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(_this.extractData));
-            console.log("ProductService loadEndPointURL 3 : endpoint URL : " + _this.apiServiceURL);
         }));
     };
     ProductService.prototype.ngOnInit = function () {
@@ -401,7 +400,7 @@ var ProductAddComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-add',
             template: __webpack_require__(/*! ./product-add.component.html */ "./src/app/product/product-add/product-add.component.html"),
-            styles: [__webpack_require__(/*! ./product-add.component.css */ "./src/app/product/product-add/product-add.component.css")]
+            styles: [__webpack_require__(/*! ./product-add.component.css */ "./src/app/product/product-add/product-add.component.css"), __webpack_require__(/*! ./../../app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_product_service__WEBPACK_IMPORTED_MODULE_2__["ProductService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], ProductAddComponent);
@@ -469,7 +468,7 @@ var ProductDetailComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-detail',
             template: __webpack_require__(/*! ./product-detail.component.html */ "./src/app/product/product-detail/product-detail.component.html"),
-            styles: [__webpack_require__(/*! ./product-detail.component.css */ "./src/app/product/product-detail/product-detail.component.css")]
+            styles: [__webpack_require__(/*! ./product-detail.component.css */ "./src/app/product/product-detail/product-detail.component.css"), __webpack_require__(/*! ./../../app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_product_service__WEBPACK_IMPORTED_MODULE_3__["ProductService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ProductDetailComponent);
@@ -534,7 +533,7 @@ var ProductHomeComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-home',
             template: __webpack_require__(/*! ./product-home.component.html */ "./src/app/product/product-home/product-home.component.html"),
-            styles: [__webpack_require__(/*! ./product-home.component.css */ "./src/app/product/product-home/product-home.component.css")]
+            styles: [__webpack_require__(/*! ./product-home.component.css */ "./src/app/product/product-home/product-home.component.css"), __webpack_require__(/*! ./../../app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ProductHomeComponent);
@@ -618,7 +617,7 @@ var ProductListComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-list',
             template: __webpack_require__(/*! ./product-list.component.html */ "./src/app/product/product-list/product-list.component.html"),
-            styles: [__webpack_require__(/*! ./product-list.component.css */ "./src/app/product/product-list/product-list.component.css")]
+            styles: [__webpack_require__(/*! ./product-list.component.css */ "./src/app/product/product-list/product-list.component.css"), __webpack_require__(/*! ./../../app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_product_service__WEBPACK_IMPORTED_MODULE_2__["ProductService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], ProductListComponent);
@@ -699,7 +698,7 @@ var ProductUpdateComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-update',
             template: __webpack_require__(/*! ./product-update.component.html */ "./src/app/product/product-update/product-update.component.html"),
-            styles: [__webpack_require__(/*! ./product-update.component.css */ "./src/app/product/product-update/product-update.component.css")]
+            styles: [__webpack_require__(/*! ./product-update.component.css */ "./src/app/product/product-update/product-update.component.css"), __webpack_require__(/*! ./../../app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_product_service__WEBPACK_IMPORTED_MODULE_2__["ProductService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], ProductUpdateComponent);

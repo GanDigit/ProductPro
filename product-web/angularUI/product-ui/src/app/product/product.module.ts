@@ -9,6 +9,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
 
+
 @NgModule({
   declarations: [ProductListComponent, ProductAddComponent, ProductUpdateComponent, ProductDetailComponent, ProductHomeComponent],
   imports: [

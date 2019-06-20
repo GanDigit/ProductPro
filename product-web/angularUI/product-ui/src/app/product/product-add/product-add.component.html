@@ -1,15 +1,22 @@
 <div>
-  <h2>Product Add</h2>
+  <h4>Product Add</h4>
   <div>
-    <label>Product Category:
-      <input [(ngModel)]="productData.category" placeholder="Product Category"/>
-    </label><br>
-    <label>Product Name:
-      <input [(ngModel)]="productData.name" placeholder="Product Name"/>
-    </label><br>
-    <label>Product Price:
-      <input [(ngModel)]="productData.price" placeholder="Product Price"/>
-    </label><br>
+      <table class="table">
+      <tbody>
+          <tr>
+            <td>Category</td>
+            <td>{<input [(ngModel)]="productData.category" placeholder="Product Category"/></td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="productData.name" placeholder="Product Name"/></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="productData.price" placeholder="Product Price"/></td>
+          </tr>
+      </tbody>
+    </table>
   </div>
   <button (click)="addProduct()">Save</button>
 </div>

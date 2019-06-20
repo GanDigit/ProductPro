@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ProductUpdateComponent implements OnInit {
 
-  @Input() productData:any = {  category: '', name: '', description: '', price:0 };
+  @Input() productData:any = { id:0, category: '', name: '', description: '', price:0 };
 
   constructor(public productService:ProductService, private route: ActivatedRoute, private router: Router) { }
 
@@ -22,7 +22,7 @@ export class ProductUpdateComponent implements OnInit {
 
   updateProduct() {
     this.productService.updateProduct(this.route.snapshot.params['id'], this.productData).subscribe((result) => {
-      this.router.navigate(['/product-details/'+result.id]);
+      this.router.navigate(['/product']);
     }, (err) => {
       console.log(err);
     });

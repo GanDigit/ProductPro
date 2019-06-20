@@ -7,8 +7,182 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
-<body>
-  <app-root></app-root>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand text-left" href="#myPage">PRODUCT Pro</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <img src="/assets/img/home-page.png" alt="Architecture" width="1500" height="800">
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="products" class="container-fluid text-center bg-grey">
+  <h2>Products</h2>
+  <h4>Products catalog</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <app-root></app-root>
+    </div>
+  </div>
+</div>
+
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>Bright Ideas</h4>
+      <p>ring summer into your space with vibrant colors, patterns, and shapes, inspired by the earth and sky. Brighten every corner of your home with our eclectic collection of traditional and modern home accents</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>Handbags</h4>
+      <p>Indulge in luxurious leather and sumptuous suede handbags, in colors that will take your breath away. From oversized totes to elegant clutches, you'll find your perfect match at a perfect price in our handcrafted designer collection.</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>Flat-out Comfort</h4>
+      <p>Beautifully designed, soft leather shoes with an elasticized edge for perfect fit. Lightweight and durable, these flats will provide all-day comfort with their cushioned insole and soft lining. Multi-colored accent lace combinations and patterns are available as a special order. </p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>Kids' Stuff</h4>
+      <p>Summer style is all about fun prints, bright colors, comfort, and durability. Stock up on our easy-to-wear and affordable fashions for kids. Spend $100* or more, and earn a $25 gift certificate.
+*Before taxes. Gift certificates are redeemable on your next visit. </p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>FOOT WEAR</h4>
+      <p>Upto 60% off</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">50% Off Polos</h4>
+      <p>Select from our collection of modern, easy-to-coordinate polo shirts to create a smart but casual look. Available in a kaleidoscope of colors, with superior shape retention and wrinkle resistance. Free shipping on purchases over $60 before taxes. </p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we offer</h4>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <span class="glyphicon glyphicon-leaf logo-small"></span>
+        <p><strong>1000+ BRANDS</strong></p>
+        <p>Well Curated 2 Lakhs+ Products</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <span class="glyphicon glyphicon-heart logo-small"></span>
+        <p><strong>FREE SHIPPING</strong></p>
+        <p>For Orders Above 500</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <span class="glyphicon glyphicon-off logo-small"></span>
+        <p><strong>GENUINE PRODUCTS</strong></p>
+        <p>Sourced Directly From Brands</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"This application is the best. I am so happy with the product search!"<br><span>Victor Brown, President, ABCD Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Excellent Product!!"<br><span>Peter Vim, Sales Head, ZyncH Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Very nice product. Easy to search any products?"<br><span>Alex, Tok, Fran Inc</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid ">
+  <h2 class="text-center">CONTACT</h2>
+    <div class="text-center">
+      <p>&nbsp;</p>
+      <p>Contact us and we'll get back to you </p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Product Pro, US</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1112223344</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> info@productprof.com</p>
+      <p>&nbsp;</p>
+    </div>
+</div>
+
+<!-- Image of location/map -->
+<footer class="container-fluid text-center bg-grey">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Thank you for visiting</p>
+</footer>
 <script type="text/javascript" src="runtime.js"></script><script type="text/javascript" src="es2015-polyfills.js" nomodule></script><script type="text/javascript" src="polyfills.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
 </html>

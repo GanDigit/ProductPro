@@ -1,20 +1,34 @@
-<h2>Product List</h2>
-
 <div>
-  <button (click)="add()">
-    Add 
-  </button>
+  <div>
+    <button (click)="add()">
+      Add product
+    </button>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Category</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products">
+          <td>{{p.id}}</td>
+          <td>{{p.category}}</td>
+          <td>{{p.name}}</td>
+          <td>{{p.price}}</td>
+          <td><button title="edit product" (click)="edit(p.id)">Edit</button></td>
+          <td><button title="delete product" (click)="delete(p.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<ul class="baseCss">
-  <li *ngFor="let p of products;">
-      <span class="badge">{{p.id}}</span> {{p.category}} : {{p.name}} :  {{p.price}}
-    <button class="delete" title="delete product" (click)="delete(p.id)">x</button>
-  </li>
-</ul>
 
-<div>
-  <button (click)="add()">
-    OK Add 
-  </button>
-</div>
+
