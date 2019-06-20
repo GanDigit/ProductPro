@@ -12,9 +12,9 @@ export class AppComponent {
   constructor( private route: ActivatedRoute, private router: Router) { }
 
   products() {
-    console.log("Hi this is products 1");
+    console.log("Hi this is product click 1");
     this.router.navigate(['/product']);
-    console.log("Hi this is products 2");
+    console.log("Hi this is products click 2");
   }
 
   orders() {

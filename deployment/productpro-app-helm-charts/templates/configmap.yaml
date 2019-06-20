@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-config-map
+  labels:
+    app: {{ template "productpro-app-helm-charts.name" . }}
+    chart: {{ template "productpro-app-helm-charts.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+# type: Opaque
+data:
+  spring.datasource.url: {{ .Values.dbURL }}
+  spring.datasource.username: {{ .Values.dbUsername }}
+  spring.datasource.password: {{ .Values.dbPassword }}
+  spring.datasource.driver-class-name: com.ibm.db2.jcc.DB2Driver
+  server.port.web: {{ .Values.targetPortWeb | quote }}
+  server.port.api: {{ .Values.targetPortAPI | quote }}

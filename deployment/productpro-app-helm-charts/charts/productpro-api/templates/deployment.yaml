@@ -1,0 +1,80 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: {{ template "productpro-api.fullname" . }}
+  labels:
+    app: {{ template "productpro-api.name" . }}
+    chart: {{ template "productpro-api.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "productpro-api.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "productpro-api.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          env:
+            # General
+            # - name: server.port
+            #   valueFrom:
+            #     configMapKeyRef:
+            #       name: productpro-config-map
+            #       key: server.port.api
+            # DB2 Database
+            - name: spring.datasource.url
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.url
+            - name: spring.datasource.driver-class-name
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.driver-class-name
+            - name: spring.datasource.username
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.username
+            - name: spring.datasource.password
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.password
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  server_URL: 'http://localhost:8051/'
+  webSericeURL: "http://localhost:8052/"
 };

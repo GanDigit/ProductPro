@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { ApiResponse } from '../model/api.response';
+import { switchMap } from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,16 +15,36 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ProductService implements OnInit{
 
-  apiServiceURL = "http://localhost:8051/";
+  //To access PRODUCT APIs. The value will be initialized during ngOnInit
+  apiServiceURL = "1111";
+  
+  //To access the current webserver url.
+  webSericeURL = environment.webSericeURL;
 
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-    console.log("RestService  ngOnInit 1: " );
-    this.loadEndPointURL();
-    console.log("RestService  ngOnInit 2: " );
+  loadEndPointURL(): Observable<any> {
+    console.log("ProductService  loadEndPointURL 1: " );
+    return this.getAPIServiceURL().pipe(
+      map(apiResponse => {
+        console.log("ProductService  loadEndPointURL 2: " );
+        this.apiServiceURL = apiResponse.url;
+
+        return this.http.get(this.apiServiceURL + '/api/product', httpOptions).pipe(
+          map(this.extractData));
+        console.log("ProductService loadEndPointURL 3 : endpoint URL : " + this.apiServiceURL );
+      })
+    )
+   }
+  
+   ngOnInit() {
+    console.log("ProductService  ngOnInit 1.1: " );
+    this.mySimpleMethod();
+    console.log("ProductService  ngOnInit 1.2: " );
+    this.getAPIServiceURL();
+    console.log("ProductService  ngOnInit 2.2: " );
   }
 
   private extractDataString(res: Response) {
@@ -33,21 +54,13 @@ export class ProductService {
     return result;
   }
 
-  loadEndPointURL(): Observable<any> {
-    console.log("RestService  loadEndPointURL 1: " );
-
-    return this.getAPIServiceURL().pipe(
-      map(apiResponse => {
-        console.log("RestService  loadEndPointURL 2: " );
-        this.apiServiceURL = apiResponse.url;
-        console.log("endpoint URL : " + this.apiServiceURL );
-      })
-    )
-   }
+  public mySimpleMethod() {
+    console.log("mySimpleMethod URL : " + this.webSericeURL);
+  }
 
   public getAPIServiceURL() {
-    console.log("server URL : " + environment.server_URL);
-    return this.http.get<ApiResponse>(environment.server_URL + '/apiServiceURL');
+    console.log("webSericeURL URL : " + this.webSericeURL);
+    return this.http.get<ApiResponse>(this.webSericeURL + '/apiServiceURL');
   }
 
   private extractData(res: Response) {
@@ -56,14 +69,18 @@ export class ProductService {
   }
 
   getProducts(): Observable<any> {
-    console.log("ProductService getProducts: 1" );
-    console.log("ProductService getProducts: 2 : " + this.apiServiceURL);
+    console.log("getProducts ----> apiServiceURL URL : " + this.apiServiceURL);
 
-    return this.http.get(this.apiServiceURL + '/api/product', httpOptions).pipe(
-      map(this.extractData));
-  }
+    return this.getAPIServiceURL().pipe(
+      switchMap(apiResponse => {
+        //Store this end point for future reference..
+        this.apiServiceURL = apiResponse.url;
+        return this.http.get(this.apiServiceURL + '/api/product' , httpOptions).pipe(map(this.extractData));
+      })
+    )
+   }
 
-  getProduct(id): Observable<any> {
+   getProduct(id): Observable<any> {
     return this.http.get(this.apiServiceURL + '/api/product/' + id, httpOptions).pipe(
       map(this.extractData));
   }
