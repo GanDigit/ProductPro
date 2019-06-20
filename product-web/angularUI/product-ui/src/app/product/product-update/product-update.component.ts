@@ -14,8 +14,12 @@ export class ProductUpdateComponent implements OnInit {
   constructor(public productService:ProductService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.productService.getProduct(this.route.snapshot.params['id']).subscribe((data: {}) => {
-      console.log(data);
+
+    var id = this.route.snapshot.params['id'];
+    console.log("ProductUpdateComponent ngOnInit id: " + id);
+
+    this.productService.getProduct(id).subscribe((data: {}) => {
+      console.log("ProductUpdateComponent ngOnInit getProduct: " + data);
       this.productData = data;
     });
   }
@@ -27,5 +31,7 @@ export class ProductUpdateComponent implements OnInit {
       console.log(err);
     });
   }
-
+  products() {
+    this.router.navigate(['/product']);
+  }
 }

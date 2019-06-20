@@ -1,34 +1,39 @@
 <div>
-  <div>
-    <button (click)="add()">
-      Add product
-    </button>
-  </div>
-  <div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Category</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Edit</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of products">
-          <td>{{p.id}}</td>
-          <td>{{p.category}}</td>
-          <td>{{p.name}}</td>
-          <td>{{p.price}}</td>
-          <td><button title="edit product" (click)="edit(p.id)">Edit</button></td>
-          <td><button title="delete product" (click)="delete(p.id)">Delete</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="container">
+      <div class="row">
+          <h4>Product List</h4>
+      </div>        
+      <div class="row">
+          <div style="width:1200px; height:320px; overflow: auto;text-align: center;"> 
+            <table id="tableType1">
+              <thead>
+                <tr>
+                  <th style="width:150px;"> Id</th>
+                  <th>Category</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th style="width:10px;">Edit</th>
+                  <th style="width:10px;">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of products">
+                  <td>{{p.id}}</td>
+                  <td>{{p.category}}</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.price}}</td>
+                  <td><button title="edit product" (click)="edit(p.id)" class="button buttonGray">Edit</button></td>
+                  <td><button title="delete product" (click)="delete(p.id)" class="button buttonGray">Delete</button></td>
+                </tr> 
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <div >
+            <button (click)="add()" class="button buttonBlue">Add product</button>
+          </div>
+      </div>
+    </div>
 </div>
-
-
-

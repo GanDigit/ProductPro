@@ -32,7 +32,9 @@ export class ProductListComponent implements OnInit {
   }
   
   public edit(id) {
-    this.router.navigate(['/product-update/:' + id]);
+    var myURL = '/product-update/' + id;
+    console.log("ProductListComponent edit id :" + myURL + ":");
+    this.router.navigate([myURL]);
   }
 
   public delete(id) {

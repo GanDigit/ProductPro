@@ -1,4 +1,66 @@
-/* Products Component's private CSS styles */
+.divCell1 {
+  float: left;
+  width: 33.33%;
+}
+.divCell2 {
+  float: left;
+  width: 100px;
+}
+.divCell3 {
+  float: left;
+  width: 200px;
+}
+.divCell4 {
+  float: left;
+  width: 33.33%;
+}
+.divRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 20px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 1px 1px;
+  cursor: pointer;
+}
+
+.buttonBlue {background-color: #008CBA;} /* Blue */
+.buttonGray {background-color: #808080;} /* Blue */
+
+#tableType1, #tableType2 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  box-align:center;
+  width:100%;
+  text-align:center;
+}
+
+#tableType1 td, #tableType1 th, #tableType2 td, #tableType2 th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableType1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableType1 tr:hover {background-color: #ddd;}
+
+#tableType1 th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #778899;
+  color: white;
+}
+
 .baseCss {
     margin: 0 0 2em 0;
     list-style-type: none;

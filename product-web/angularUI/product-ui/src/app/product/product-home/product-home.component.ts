@@ -11,7 +11,7 @@ export class ProductHomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    console.log("ProductHomeComponent ---> ngOnInit");
+    this.products();
   }
   products() {
     this.router.navigate(['/product']);
