@@ -8,7 +8,7 @@ node {
     stage("Compile") {
         sh 'echo "Compile Started ...."'
         checkout scm
-        sh "cp -r interest/* ./"
+        sh "cp -r product-web/* ./"
         sh "mvn package"
         sh 'echo "Compile Completed ...."'
     }
