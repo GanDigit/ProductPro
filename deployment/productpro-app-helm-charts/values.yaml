@@ -8,32 +8,32 @@ namespace: productpro-app
 # Docker image pull secret
 dockerImagePullSecretValue: eyJhdXRocyI6eyJteWNsdXN0ZXJoY2wxLmljcDo4NTAwIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiZW1haWwiOiJudWxsIiwiYXV0aCI6IllXUnRhVzQ2WVdSdGFXND0ifX19
 
-# Springboot default port / targetPort  : Port in which the springboot app running
-targetPortWeb: 8042
-targetPortAPI: 8041
-
-# Node port : Port in which the service is exposed outside cluster
-nodePortWeb: 30042
-nodePortAPI: 30041
-
 # DB Properties
 dbURL: jdbc:db2://9.121.242.180:31274/jkedb
 dbUsername: db2inst
 dbPassword: db2inst
 
-replicaCountWeb: 1
-replicaCountAPI: 1
+imageAPI:
+  repository: myclusterhcl1.icp:8500/productpro-app/productpro-api
+  tag: latest
+  pullPolicy: Always
 
-replicaCount: 1
+imageWeb:
+  repository: myclusterhcl1.icp:8500/productpro-app/productpro-web
+  tag: latest
+  pullPolicy: Always
 
-image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
-
-service:
-  type: ClusterIP
+serviceWeb:
+  type: NodePort
   port: 80
+  targetPort: 8052
+  nodePort: 31052
+
+serviceAPI:
+  type: NodePort
+  port: 80
+  targetPort: 8051
+  nodePort: 31051
 
 ingress:
   enabled: true

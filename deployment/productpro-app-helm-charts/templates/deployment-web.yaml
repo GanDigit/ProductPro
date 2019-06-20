@@ -2,28 +2,28 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   namespace: {{ .Values.nameSpace }}
-  name: {{ template "productpro-web.fullname" . }}
+  name: productpro-web
   labels:
-    app: {{ template "productpro-web.name" . }}
-    chart: {{ template "productpro-web.chart" . }}
+    app: {{ template "productpro-app-helm-charts.name" . }}
+    chart: {{ template "productpro-app-helm-charts.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.replicaCountWeb }}
   selector:
     matchLabels:
-      app: {{ template "productpro-web.name" . }}
+      app: {{ template "productpro-app-helm-charts.name" . }}
       release: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: {{ template "productpro-web.name" . }}
+        app: {{ template "productpro-app-helm-charts.name" . }}
         release: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: "{{ .Values.imageWeb.repository }}:{{ .Values.imageWeb.tag }}"
+          imagePullPolicy: {{ .Values.imageWeb.pullPolicy }}
           ports:
             - name: http
               containerPort: 80
