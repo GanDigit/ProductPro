@@ -10,6 +10,7 @@ mvn clean package
 
 docker version
 
+docker login myclusterhcl1.icp:8500
 
 docker build -f config/Dockerfile -t myclusterhcl1.icp:8500/productpro-app/productpro-web:latest .
 

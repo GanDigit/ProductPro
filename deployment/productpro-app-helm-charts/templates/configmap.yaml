@@ -16,3 +16,15 @@ data:
   spring.datasource.driver-class-name: com.ibm.db2.jcc.DB2Driver
   server.port.web: {{ .Values.targetPortWeb | quote }}
   server.port.api: {{ .Values.targetPortAPI | quote }}
+  ibm.mq.connName:  {{ .Values.mqHostName }}({{ .Values.mqPort }})
+  ibm.mq.user: {{ .Values.mqUser }}
+  ibm.mq.password: {{ .Values.mqPassword | quote  }}
+  ibm.mq.queueName: {{ .Values.mqQueueName }}
+  ibm.mq.queueManager: {{ .Values.mqQueueManager }}
+  ibm.mq.channel: {{ .Values.mqChannel }}
+  ibm.mq.deadQueueName: {{ .Values.mqDeadQueueName }}
+  ibm.mq.exchange: {{ .Values.mqExchange }}
+  notification.enabled: {{ .Values.notificationEnabled | quote }}
+  notification.from: {{ .Values.notificationFrom }}
+  notification.to: {{ .Values.notificationTo }}
+  notification.sendgrid.key: {{ .Values.notificationSendgridKey }}

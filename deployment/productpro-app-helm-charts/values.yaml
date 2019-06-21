@@ -14,8 +14,9 @@ replicaCountAPI: 1
 # DB Properties
 dbURL: jdbc:db2://9.121.242.180:31274/jkedb
 dbUsername: db2inst
-dbPassword: db2inst
+dbPassword: <<TO_BE_REPLACED>>
 
+# Image
 imageAPI:
   repository: myclusterhcl1.icp:8500/productpro-app/productpro-api
   tag: latest
@@ -26,18 +27,39 @@ imageWeb:
   tag: latest
   pullPolicy: Always
 
+# Keep the targetPort as 9080 for Websphere liberty server
 serviceWeb:
   type: NodePort
   port: 80
-  targetPort: 8052
+  targetPort: 9080
   nodePort: 31052
-
+# Keep the targetPort as 9080 for Websphere liberty server
 serviceAPI:
   type: NodePort
   port: 80
-  targetPort: 8051
+  targetPort: 9080
   nodePort: 31051
 
+# MQ Properties 1
+mqQueueManager: QM1
+mqHostName: 9.121.242.180
+mqPort: 31132
+mqUser: admin
+mqPassword: <<TO_BE_REPLACED>>
+mqQueueName: DEV.QUEUE.2
+
+# MQ Properties 2
+mqChannel: DEV.APP.SVRCONN
+mqDeadQueueName: DEV.DEAD.LETTER.QUEUE
+mqExchange: jke-exchange
+
+# Notifications
+notificationEnabled: true
+notificationFrom: admin@prodpro.com
+notification.to: <<TO_BE_REPLACED>>
+notificationSendgridKey: <<TO_BE_REPLACED>>
+
+# ingress
 ingress:
   enabled: true
   annotations: {}
