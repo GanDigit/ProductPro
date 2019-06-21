@@ -15,6 +15,7 @@ node {
 
     stage("Docker build") {
         sh 'echo "build Started ...."'
+        sh "docker version"
         sh "docker build -f config/Dockerfile -t ${IMAGE_TAG_NAME} ."
         sh 'echo "build Completed ...."'
     }
