@@ -103,7 +103,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* Products Component's private CSS styles */\n.baseCss {\n    margin: 0 0 2em 0;\n    list-style-type: none;\n    padding: 0;\n    width: 65em;\n  }\n.baseCss li {\n    position: relative;\n    cursor: pointer;\n    background-color: #EEE;\n    margin: .5em;\n    padding: .3em 0;\n    height: 1.6em;\n    border-radius: 4px;\n  }\n.baseCss li:hover {\n    color: #607D8B;\n    background-color: #DDD;\n    left: .1em;\n  }\n.baseCss a {\n    color: #888;\n    text-decoration: none;\n    position: relative;\n    display: block;\n    width: 550px;\n  }\n.baseCss a:hover {\n    color:#607D8B;\n  }\n.baseCss .badge {\n    display: inline-block;\n    font-size: small;\n    color: white;\n    padding: 0.8em 0.7em 0 0.7em;\n    background-color: #607D8B;\n    line-height: 1em;\n    position: relative;\n    left: -1px;\n    top: -4px;\n    height: 1.8em;\n    min-width: 16px;\n    text-align: right;\n    margin-right: .8em;\n    border-radius: 4px 0 0 4px;\n  }\nbutton {\n    background-color: #eee;\n    border: none;\n    padding: 5px 10px;\n    border-radius: 4px;\n    cursor: pointer;\n    cursor: hand;\n    font-family: Arial;\n  }\nbutton:hover {\n    background-color: #cfd8dc;\n  }\nbutton.delete {\n    position: relative;\n    left: 800px;\n    top: -32px;\n    background-color: gray !important;\n    color: white;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsNENBQTRDO0FBQzVDO0lBQ0ksaUJBQWlCO0lBQ2pCLHFCQUFxQjtJQUNyQixVQUFVO0lBQ1YsV0FBVztFQUNiO0FBQ0E7SUFDRSxrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLHNCQUFzQjtJQUN0QixZQUFZO0lBQ1osZUFBZTtJQUNmLGFBQWE7SUFDYixrQkFBa0I7RUFDcEI7QUFFQTtJQUNFLGNBQWM7SUFDZCxzQkFBc0I7SUFDdEIsVUFBVTtFQUNaO0FBRUE7SUFDRSxXQUFXO0lBQ1gscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixjQUFjO0lBQ2QsWUFBWTtFQUNkO0FBRUE7SUFDRSxhQUFhO0VBQ2Y7QUFFQTtJQUNFLHFCQUFxQjtJQUNyQixnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLDRCQUE0QjtJQUM1Qix5QkFBeUI7SUFDekIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsU0FBUztJQUNULGFBQWE7SUFDYixlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQiwwQkFBMEI7RUFDNUI7QUFFQTtJQUNFLHNCQUFzQjtJQUN0QixZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2YsWUFBWTtJQUNaLGtCQUFrQjtFQUNwQjtBQUVBO0lBQ0UseUJBQXlCO0VBQzNCO0FBRUE7SUFDRSxrQkFBa0I7SUFDbEIsV0FBVztJQUNYLFVBQVU7SUFDVixpQ0FBaUM7SUFDakMsWUFBWTtFQUNkIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBQcm9kdWN0cyBDb21wb25lbnQncyBwcml2YXRlIENTUyBzdHlsZXMgKi9cbi5iYXNlQ3NzIHtcbiAgICBtYXJnaW46IDAgMCAyZW0gMDtcbiAgICBsaXN0LXN0eWxlLXR5cGU6IG5vbmU7XG4gICAgcGFkZGluZzogMDtcbiAgICB3aWR0aDogNjVlbTtcbiAgfVxuICAuYmFzZUNzcyBsaSB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRUVFO1xuICAgIG1hcmdpbjogLjVlbTtcbiAgICBwYWRkaW5nOiAuM2VtIDA7XG4gICAgaGVpZ2h0OiAxLjZlbTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gIH1cbiAgXG4gIC5iYXNlQ3NzIGxpOmhvdmVyIHtcbiAgICBjb2xvcjogIzYwN0Q4QjtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjREREO1xuICAgIGxlZnQ6IC4xZW07XG4gIH1cbiAgXG4gIC5iYXNlQ3NzIGEge1xuICAgIGNvbG9yOiAjODg4O1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgd2lkdGg6IDU1MHB4O1xuICB9XG4gIFxuICAuYmFzZUNzcyBhOmhvdmVyIHtcbiAgICBjb2xvcjojNjA3RDhCO1xuICB9XG4gIFxuICAuYmFzZUNzcyAuYmFkZ2Uge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICBmb250LXNpemU6IHNtYWxsO1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBwYWRkaW5nOiAwLjhlbSAwLjdlbSAwIDAuN2VtO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM2MDdEOEI7XG4gICAgbGluZS1oZWlnaHQ6IDFlbTtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbGVmdDogLTFweDtcbiAgICB0b3A6IC00cHg7XG4gICAgaGVpZ2h0OiAxLjhlbTtcbiAgICBtaW4td2lkdGg6IDE2cHg7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgbWFyZ2luLXJpZ2h0OiAuOGVtO1xuICAgIGJvcmRlci1yYWRpdXM6IDRweCAwIDAgNHB4O1xuICB9XG4gIFxuICBidXR0b24ge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNlZWU7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIHBhZGRpbmc6IDVweCAxMHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgY3Vyc29yOiBoYW5kO1xuICAgIGZvbnQtZmFtaWx5OiBBcmlhbDtcbiAgfVxuICBcbiAgYnV0dG9uOmhvdmVyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjY2ZkOGRjO1xuICB9XG4gIFxuICBidXR0b24uZGVsZXRlIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbGVmdDogODAwcHg7XG4gICAgdG9wOiAtMzJweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBncmF5ICFpbXBvcnRhbnQ7XG4gICAgY29sb3I6IHdoaXRlO1xuICB9Il19 */"
+module.exports = ".divCell1 {\n  float: left;\n  width: 33.33%;\n}\n.divCell2 {\n  float: left;\n  width: 100px;\n}\n.divCell3 {\n  float: left;\n  width: 200px;\n}\n.divCell4 {\n  float: left;\n  width: 33.33%;\n}\n.divRow::after {\n  content: \"\";\n  clear: both;\n  display: table;\n}\n.button {\n  background-color: #4CAF50; /* Green */\n  border: none;\n  color: white;\n  padding: 5px 20px ;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 12px;\n  margin: 1px 1px;\n  cursor: pointer;\n}\n.buttonBlue {background-color: #008CBA;}\n/* Blue */\n.buttonGray {background-color: #808080;}\n/* Blue */\n#tableType1, #tableType2 {\n  font-family: Arial, Helvetica, sans-serif;\n  border-collapse: collapse;\n  box-align:center;\n  width:100%;\n  text-align:center;\n}\n#tableType1 td, #tableType1 th, #tableType2 td, #tableType2 th{\n  border: 1px solid #ddd;\n  padding: 8px;\n}\n#tableType1 tr:nth-child(even){background-color: #f2f2f2;}\n#tableType1 tr:hover {background-color: #ddd;}\n#tableType1 th {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  text-align: left;\n  background-color: #778899;\n  color: white;\n}\n.baseCss {\n    margin: 0 0 2em 0;\n    list-style-type: none;\n    padding: 0;\n    width: 65em;\n  }\n.baseCss li {\n    position: relative;\n    cursor: pointer;\n    background-color: #EEE;\n    margin: .5em;\n    padding: .3em 0;\n    height: 1.6em;\n    border-radius: 4px;\n  }\n.baseCss li:hover {\n    color: #607D8B;\n    background-color: #DDD;\n    left: .1em;\n  }\n.baseCss a {\n    color: #888;\n    text-decoration: none;\n    position: relative;\n    display: block;\n    width: 550px;\n  }\n.baseCss a:hover {\n    color:#607D8B;\n  }\n.baseCss .badge {\n    display: inline-block;\n    font-size: small;\n    color: white;\n    padding: 0.8em 0.7em 0 0.7em;\n    background-color: #607D8B;\n    line-height: 1em;\n    position: relative;\n    left: -1px;\n    top: -4px;\n    height: 1.8em;\n    min-width: 16px;\n    text-align: right;\n    margin-right: .8em;\n    border-radius: 4px 0 0 4px;\n  }\nbutton {\n    background-color: #eee;\n    border: none;\n    padding: 5px 10px;\n    border-radius: 4px;\n    cursor: pointer;\n    cursor: hand;\n    font-family: Arial;\n  }\nbutton:hover {\n    background-color: #cfd8dc;\n  }\nbutton.delete {\n    position: relative;\n    left: 800px;\n    top: -32px;\n    background-color: gray !important;\n    color: white;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFXO0VBQ1gsYUFBYTtBQUNmO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsWUFBWTtBQUNkO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsWUFBWTtBQUNkO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsYUFBYTtBQUNmO0FBQ0E7RUFDRSxXQUFXO0VBQ1gsV0FBVztFQUNYLGNBQWM7QUFDaEI7QUFFQTtFQUNFLHlCQUF5QixFQUFFLFVBQVU7RUFDckMsWUFBWTtFQUNaLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixxQkFBcUI7RUFDckIsZUFBZTtFQUNmLGVBQWU7RUFDZixlQUFlO0FBQ2pCO0FBRUEsYUFBYSx5QkFBeUIsQ0FBQztBQUFFLFNBQVM7QUFDbEQsYUFBYSx5QkFBeUIsQ0FBQztBQUFFLFNBQVM7QUFFbEQ7RUFDRSx5Q0FBeUM7RUFDekMseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixVQUFVO0VBQ1YsaUJBQWlCO0FBQ25CO0FBRUE7RUFDRSxzQkFBc0I7RUFDdEIsWUFBWTtBQUNkO0FBRUEsK0JBQStCLHlCQUF5QixDQUFDO0FBRXpELHNCQUFzQixzQkFBc0IsQ0FBQztBQUU3QztFQUNFLGdCQUFnQjtFQUNoQixtQkFBbUI7RUFDbkIsZ0JBQWdCO0VBQ2hCLHlCQUF5QjtFQUN6QixZQUFZO0FBQ2Q7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixxQkFBcUI7SUFDckIsVUFBVTtJQUNWLFdBQVc7RUFDYjtBQUNBO0lBQ0Usa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGVBQWU7SUFDZixhQUFhO0lBQ2Isa0JBQWtCO0VBQ3BCO0FBRUE7SUFDRSxjQUFjO0lBQ2Qsc0JBQXNCO0lBQ3RCLFVBQVU7RUFDWjtBQUVBO0lBQ0UsV0FBVztJQUNYLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsY0FBYztJQUNkLFlBQVk7RUFDZDtBQUVBO0lBQ0UsYUFBYTtFQUNmO0FBRUE7SUFDRSxxQkFBcUI7SUFDckIsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWiw0QkFBNEI7SUFDNUIseUJBQXlCO0lBQ3pCLGdCQUFnQjtJQUNoQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFNBQVM7SUFDVCxhQUFhO0lBQ2IsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsMEJBQTBCO0VBQzVCO0FBRUE7SUFDRSxzQkFBc0I7SUFDdEIsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLFlBQVk7SUFDWixrQkFBa0I7RUFDcEI7QUFFQTtJQUNFLHlCQUF5QjtFQUMzQjtBQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxVQUFVO0lBQ1YsaUNBQWlDO0lBQ2pDLFlBQVk7RUFDZCIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmRpdkNlbGwxIHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIHdpZHRoOiAzMy4zMyU7XG59XG4uZGl2Q2VsbDIge1xuICBmbG9hdDogbGVmdDtcbiAgd2lkdGg6IDEwMHB4O1xufVxuLmRpdkNlbGwzIHtcbiAgZmxvYXQ6IGxlZnQ7XG4gIHdpZHRoOiAyMDBweDtcbn1cbi5kaXZDZWxsNCB7XG4gIGZsb2F0OiBsZWZ0O1xuICB3aWR0aDogMzMuMzMlO1xufVxuLmRpdlJvdzo6YWZ0ZXIge1xuICBjb250ZW50OiBcIlwiO1xuICBjbGVhcjogYm90aDtcbiAgZGlzcGxheTogdGFibGU7XG59XG5cbi5idXR0b24ge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwOyAvKiBHcmVlbiAqL1xuICBib3JkZXI6IG5vbmU7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgcGFkZGluZzogNXB4IDIwcHggO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBmb250LXNpemU6IDEycHg7XG4gIG1hcmdpbjogMXB4IDFweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4uYnV0dG9uQmx1ZSB7YmFja2dyb3VuZC1jb2xvcjogIzAwOENCQTt9IC8qIEJsdWUgKi9cbi5idXR0b25HcmF5IHtiYWNrZ3JvdW5kLWNvbG9yOiAjODA4MDgwO30gLyogQmx1ZSAqL1xuXG4jdGFibGVUeXBlMSwgI3RhYmxlVHlwZTIge1xuICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcbiAgYm9yZGVyLWNvbGxhcHNlOiBjb2xsYXBzZTtcbiAgYm94LWFsaWduOmNlbnRlcjtcbiAgd2lkdGg6MTAwJTtcbiAgdGV4dC1hbGlnbjpjZW50ZXI7XG59XG5cbiN0YWJsZVR5cGUxIHRkLCAjdGFibGVUeXBlMSB0aCwgI3RhYmxlVHlwZTIgdGQsICN0YWJsZVR5cGUyIHRoe1xuICBib3JkZXI6IDFweCBzb2xpZCAjZGRkO1xuICBwYWRkaW5nOiA4cHg7XG59XG5cbiN0YWJsZVR5cGUxIHRyOm50aC1jaGlsZChldmVuKXtiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO31cblxuI3RhYmxlVHlwZTEgdHI6aG92ZXIge2JhY2tncm91bmQtY29sb3I6ICNkZGQ7fVxuXG4jdGFibGVUeXBlMSB0aCB7XG4gIHBhZGRpbmctdG9wOiA4cHg7XG4gIHBhZGRpbmctYm90dG9tOiA4cHg7XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIGJhY2tncm91bmQtY29sb3I6ICM3Nzg4OTk7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cblxuLmJhc2VDc3Mge1xuICAgIG1hcmdpbjogMCAwIDJlbSAwO1xuICAgIGxpc3Qtc3R5bGUtdHlwZTogbm9uZTtcbiAgICBwYWRkaW5nOiAwO1xuICAgIHdpZHRoOiA2NWVtO1xuICB9XG4gIC5iYXNlQ3NzIGxpIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNFRUU7XG4gICAgbWFyZ2luOiAuNWVtO1xuICAgIHBhZGRpbmc6IC4zZW0gMDtcbiAgICBoZWlnaHQ6IDEuNmVtO1xuICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgfVxuICBcbiAgLmJhc2VDc3MgbGk6aG92ZXIge1xuICAgIGNvbG9yOiAjNjA3RDhCO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNEREQ7XG4gICAgbGVmdDogLjFlbTtcbiAgfVxuICBcbiAgLmJhc2VDc3MgYSB7XG4gICAgY29sb3I6ICM4ODg7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICB3aWR0aDogNTUwcHg7XG4gIH1cbiAgXG4gIC5iYXNlQ3NzIGE6aG92ZXIge1xuICAgIGNvbG9yOiM2MDdEOEI7XG4gIH1cbiAgXG4gIC5iYXNlQ3NzIC5iYWRnZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIGZvbnQtc2l6ZTogc21hbGw7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIHBhZGRpbmc6IDAuOGVtIDAuN2VtIDAgMC43ZW07XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzYwN0Q4QjtcbiAgICBsaW5lLWhlaWdodDogMWVtO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBsZWZ0OiAtMXB4O1xuICAgIHRvcDogLTRweDtcbiAgICBoZWlnaHQ6IDEuOGVtO1xuICAgIG1pbi13aWR0aDogMTZweDtcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcbiAgICBtYXJnaW4tcmlnaHQ6IC44ZW07XG4gICAgYm9yZGVyLXJhZGl1czogNHB4IDAgMCA0cHg7XG4gIH1cbiAgXG4gIGJ1dHRvbiB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2VlZTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgcGFkZGluZzogNXB4IDEwcHg7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBjdXJzb3I6IGhhbmQ7XG4gICAgZm9udC1mYW1pbHk6IEFyaWFsO1xuICB9XG4gIFxuICBidXR0b246aG92ZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNjZmQ4ZGM7XG4gIH1cbiAgXG4gIGJ1dHRvbi5kZWxldGUge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBsZWZ0OiA4MDBweDtcbiAgICB0b3A6IC0zMnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IGdyYXkgIWltcG9ydGFudDtcbiAgICBjb2xvcjogd2hpdGU7XG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -114,7 +114,7 @@ module.exports = "/* Products Component's private CSS styles */\n.baseCss {\n   
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to Product Pro !!!!!!\n  </h1>\n</div>\n<router-outlet></router-outlet>\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -353,7 +353,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h2>Product Add</h2>\n  <div>\n    <label>Product Category:\n      <input [(ngModel)]=\"productData.category\" placeholder=\"Product Category\"/>\n    </label><br>\n    <label>Product Name:\n      <input [(ngModel)]=\"productData.name\" placeholder=\"Product Name\"/>\n    </label><br>\n    <label>Product Price:\n      <input [(ngModel)]=\"productData.price\" placeholder=\"Product Price\"/>\n    </label><br>\n  </div>\n  <button (click)=\"addProduct()\">Save</button>\n</div>"
+module.exports = "<div> \n    <div class=\"container\">\n      <div class=\"row\">\n          <h4>Add New Product</h4>\n      </div> \n      <br> \n      <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Category</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.category\" placeholder=\"Product Category\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n       <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Name</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.name\" placeholder=\"Product Name\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n      <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Price</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.price\" placeholder=\"Product Price\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n      <br>\n      <div class=\"row\">\n          <div >\n            <button (click)=\"addProduct()\" class=\"button buttonBlue\">Save</button>\n            <button (click)=\"products()\" class=\"button buttonBlue\">Cancel</button>\n          </div>\n      </div>\n      <br>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -387,7 +387,7 @@ var ProductAddComponent = /** @class */ (function () {
     ProductAddComponent.prototype.addProduct = function () {
         var _this = this;
         this.productService.addProduct(this.productData).subscribe(function (result) {
-            _this.router.navigate(['/product-details/' + result.id]);
+            _this.router.navigate(['/product']);
         }, function (err) {
             console.log(err);
         });
@@ -429,7 +429,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"product\" class=\"baseCss\">\n  <h2>{{product.name | uppercase}} Details</h2>\n  <div><span>Id : </span>{{product.id}}</div>\n  <div><span>Category : </span>{{product.category}}</div>\n  <div><span>Name : </span>{{product.name}}</div>\n  <div><span>Price : </span>{{product.price}}</div>\n  <div>\n      Edit\n  </div>\n</div>"
+module.exports = "<div>\n  <div style=\"text-align:center\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <h4>Product Details</h4>\n        <div *ngIf=\"product\" class=\"baseCss\">\n          <table class=\"table\">\n            <tbody>\n                <tr>\n                  <td>Id</td>\n                  <td>{{product.id}}</td>\n                </tr>\n                <tr>\n                  <td>Category</td>\n                  <td>{{product.category}}</td>\n                </tr>\n                <tr>\n                  <td>Name</td>\n                  <td>{{product.name}}</td>\n                </tr>\n                <tr>\n                  <td>Price</td>\n                  <td>{{product.price}}</td>\n                </tr>\n            </tbody>\n          </table>\n        </div>\n        <p><button (click)=\"products()\" class=\"button buttonBlue\"> Go to Product List </button></p>\n        </div>\n      </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -464,6 +464,9 @@ var ProductDetailComponent = /** @class */ (function () {
             _this.product = data;
         });
     };
+    ProductDetailComponent.prototype.products = function () {
+        this.router.navigate(['/product']);
+    };
     ProductDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-product-detail',
@@ -497,7 +500,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align:center\">\n  <div class=\"container\">\n    <div class=\"row\">\n        <h2>Product List</h2>\n        <p><button (click)=\"products()\"> View Product List </button></p>\n        <a routerLink=\"/product\">View Product List</a>\n    </div>\n  </div>\n</div>"
+module.exports = "\n<div style=\"text-align:center\">\n    <div class=\"container\">\n      <div class=\"row\">\n          <p><button (click)=\"products()\" class=\"button buttonBlue\"> View Product List </button></p>\n      </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -523,11 +526,10 @@ var ProductHomeComponent = /** @class */ (function () {
         this.router = router;
     }
     ProductHomeComponent.prototype.ngOnInit = function () {
+        this.products();
     };
     ProductHomeComponent.prototype.products = function () {
-        console.log("Hi this is product click 1");
         this.router.navigate(['/product']);
-        console.log("Hi this is products click 2");
     };
     ProductHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -562,7 +564,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Product List</h2>\n\n<div>\n  <button (click)=\"add()\">\n    Add \n  </button>\n</div>\n\n<ul class=\"baseCss\">\n  <li *ngFor=\"let p of products;\">\n      <span class=\"badge\">{{p.id}}</span> {{p.category}} : {{p.name}} :  {{p.price}}\n    <button class=\"delete\" title=\"delete product\" (click)=\"delete(p.id)\">x</button>\n  </li>\n</ul>\n\n<div>\n  <button (click)=\"add()\">\n    OK Add \n  </button>\n</div>"
+module.exports = "<div>\n    <div class=\"container\">\n      <div class=\"row\">\n          <h4>Product List</h4>\n      </div>        \n      <div class=\"row\">\n          <div style=\"width:1200px; height:320px; overflow: auto;text-align: center;\"> \n            <table id=\"tableType1\">\n              <thead>\n                <tr>\n                  <th style=\"width:150px;\"> Id</th>\n                  <th>Category</th>\n                  <th>Name</th>\n                  <th>Price</th>\n                  <th style=\"width:10px;\">Edit</th>\n                  <th style=\"width:10px;\">Delete</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let p of products\">\n                  <td>{{p.id}}</td>\n                  <td>{{p.category}}</td>\n                  <td>{{p.name}}</td>\n                  <td>{{p.price}}</td>\n                  <td><button title=\"edit product\" (click)=\"edit(p.id)\" class=\"button buttonGray\">Edit</button></td>\n                  <td><button title=\"delete product\" (click)=\"delete(p.id)\" class=\"button buttonGray\">Delete</button></td>\n                </tr> \n              </tbody>\n            </table>\n          </div>\n      </div>\n      <br>\n      <div class=\"row\">\n          <div >\n            <button (click)=\"add()\" class=\"button buttonBlue\">Add product</button>\n          </div>\n      </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -603,6 +605,11 @@ var ProductListComponent = /** @class */ (function () {
     };
     ProductListComponent.prototype.add = function () {
         this.router.navigate(['/product-add']);
+    };
+    ProductListComponent.prototype.edit = function (id) {
+        var myURL = '/product-update/' + id;
+        console.log("ProductListComponent edit id :" + myURL + ":");
+        this.router.navigate([myURL]);
     };
     ProductListComponent.prototype.delete = function (id) {
         var _this = this;
@@ -646,7 +653,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h2>Product Edit</h2>\n  <div>\n    <label>Product Category:\n      <input [(ngModel)]=\"productData.category\" placeholder=\"Product Name\"/>\n    </label><br>\n    <label>Product Name:\n      <input [(ngModel)]=\"productData.name\" placeholder=\"Product Name\"/>\n    </label><br>\n    <label>Product Price:\n      <input [(ngModel)]=\"productData.price\" placeholder=\"Product Price\"/>\n    </label><br>\n  </div>\n  <button (click)=\"updateProduct()\">Update</button>\n</div>"
+module.exports = "<div> \n    <div class=\"container\">\n      <div class=\"row\">\n          <h4>Product Modification</h4>\n      </div> \n      <br> \n      <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Category</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.category\" placeholder=\"Product Category\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n       <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Name</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.name\" placeholder=\"Product Name\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n      <div class=\"divRow\">\n        <div class=\"divCell1\"><p></p></div>\n        <div class=\"divCell2\"><p>Price</p></div>\n        <div class=\"divCell3\">\n          <input [(ngModel)]=\"productData.price\" placeholder=\"Product Price\"/>\n        </div>\n        <div class=\"divCell4\"><p></p></div>\n      </div>\n      <br>\n      <input type=hidden [(ngModel)]=\"productData.id\"/>\n      <div class=\"row\">\n          <div >\n            <button (click)=\"updateProduct()\" class=\"button buttonBlue\">Save</button>\n            <button (click)=\"products()\" class=\"button buttonBlue\">Cancel</button>\n          </div>\n      </div>\n      <br>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -673,22 +680,27 @@ var ProductUpdateComponent = /** @class */ (function () {
         this.productService = productService;
         this.route = route;
         this.router = router;
-        this.productData = { category: '', name: '', description: '', price: 0 };
+        this.productData = { id: 0, category: '', name: '', description: '', price: 0 };
     }
     ProductUpdateComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.productService.getProduct(this.route.snapshot.params['id']).subscribe(function (data) {
-            console.log(data);
+        var id = this.route.snapshot.params['id'];
+        console.log("ProductUpdateComponent ngOnInit id: " + id);
+        this.productService.getProduct(id).subscribe(function (data) {
+            console.log("ProductUpdateComponent ngOnInit getProduct: " + data);
             _this.productData = data;
         });
     };
     ProductUpdateComponent.prototype.updateProduct = function () {
         var _this = this;
         this.productService.updateProduct(this.route.snapshot.params['id'], this.productData).subscribe(function (result) {
-            _this.router.navigate(['/product-details/' + result.id]);
+            _this.router.navigate(['/product']);
         }, function (err) {
             console.log(err);
         });
+    };
+    ProductUpdateComponent.prototype.products = function () {
+        this.router.navigate(['/product']);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
