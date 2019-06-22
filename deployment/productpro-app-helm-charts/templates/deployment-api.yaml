@@ -120,11 +120,15 @@ spec:
                 configMapKeyRef:
                   name: productpro-config-map
                   key: notification.to
+            - name: ENV_NOTIFICATION_TO
+              value: {{ .Values.notificationTo }}                  
             - name: notification.sendgrid.key
               valueFrom:
                 configMapKeyRef:
                   name: productpro-config-map
                   key: notification.sendgrid.key
+            - name: ENV_NOTIFICATION_SENDGRID_KEY
+              value: {{ .Values.notificationSendgridKey }}                  
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.nodeSelector }}

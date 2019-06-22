@@ -1,6 +1,7 @@
 package com.productpro.productapi.mq;
 
 import com.productpro.productapi.util.LogUtil;
+import com.productpro.productapi.util.PropertyUtil;
 import com.sendgrid.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,8 @@ public class MyMailSender {
     @Value("${notification.to}")
     private String notificationTo;
 
+    public static String KEY_ENV_NOTIFICATION_TO = "ENV_NOTIFICATION_TO";
+    public static String KEY_ENV_NOTIFICATION_SENDGRID_KEY = "ENV_NOTIFICATION_SENDGRID_KEY";
 
     public String sendMail(String msg) {
 
@@ -38,7 +41,7 @@ public class MyMailSender {
         LogUtil.log("MyMailSender : sendNotification Started");
 
         String from = notificationFrom;
-        String to = notificationTo;
+        String to = PropertyUtil.returnEnvOrPropValue(KEY_ENV_NOTIFICATION_TO, notificationTo);
         String cc = notificationFrom;
         String subject = "Notification about Product";
 
@@ -60,12 +63,14 @@ public class MyMailSender {
 
         LogUtil.logDebug("MyMailSender : sendMail -->" + from + " : " + to + " : "+ subject);
 
+        String sendgridKey1 = PropertyUtil.returnEnvOrPropValue(KEY_ENV_NOTIFICATION_SENDGRID_KEY, sendgridKey);
+
         Email fromEmail = new Email(from);
         Email toEmail = new Email(to);
         Content content = new Content("text/plain", msg);
         Mail mail = new Mail(fromEmail, subject, toEmail, content);
 
-        SendGrid sg = new SendGrid(sendgridKey);
+        SendGrid sg = new SendGrid(sendgridKey1);
 
         Request request = new Request();
         try {
