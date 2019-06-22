@@ -9,7 +9,7 @@ cd ../angularUI/product-ui
 pwd
 ls -l
 
-ng build
+ng build --prod
 
 pwd
 ### copy angular scripts to static folder

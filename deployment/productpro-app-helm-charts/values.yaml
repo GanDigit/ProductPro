@@ -5,6 +5,9 @@
 # namespace
 namespace: productpro-app
 
+# URL
+apiServerUrl: http://9.121.242.180:31051
+
 # Docker image pull secret
 dockerImagePullSecretValue: eyJhdXRocyI6eyJteWNsdXN0ZXJoY2wxLmljcDo4NTAwIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiZW1haWwiOiJudWxsIiwiYXV0aCI6IllXUnRhVzQ2WVdSdGFXND0ifX19
 
@@ -56,7 +59,7 @@ mqExchange: jke-exchange
 # Notifications
 notificationEnabled: true
 notificationFrom: admin@prodpro.com
-notification.to: <<TO_BE_REPLACED>>
+notificationTo: <<TO_BE_REPLACED>>
 notificationSendgridKey: <<TO_BE_REPLACED>>
 
 # ingress

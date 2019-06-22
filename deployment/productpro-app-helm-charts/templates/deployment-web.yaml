@@ -36,17 +36,12 @@ spec:
           #   httpGet:
           #     path: /
           #     port: http
-          resources:
-{{ toYaml .Values.resources | indent 12 }}
-    {{- with .Values.nodeSelector }}
-      nodeSelector:
-{{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
-{{ toYaml . | indent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
-      tolerations:
-{{ toYaml . | indent 8 }}
-    {{- end }}
+          env:
+            # API server URL
+            - name: prop.api.server.url
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: prop.api.server.url
+            - name: ENV_API_SERVER_URL
+              value: {{ .Values.apiServerUrl }}

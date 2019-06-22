@@ -31,7 +31,7 @@ export class ProductUpdateComponent implements OnInit {
       console.log(err);
     });
   }
-  products() {
+  cancel() {
     this.router.navigate(['/product']);
   }
 }

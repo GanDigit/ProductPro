@@ -17,11 +17,15 @@ const httpOptions = {
 })
 export class ProductService implements OnInit{
 
-  //To access PRODUCT APIs. The value will be initialized during ngOnInit
+  //To access PRODUCT-API mircorservice. The value will be initialized during ngOnInit
   apiServiceURL = "1111";
   
-  //To access the current webserver url.
-  webSericeURL = environment.webSericeURL;
+  /////////// The URL to acess springboot apis from angular 
+  // ----- Developement time: when running via ng serve, it can point to localhost:9080
+  // webSericeURL = environment.webSericeURL;
+  // ----- Production time: it is already inside localhost:9080, so the url should be empty, otherwise, it will bring CORS error
+  webSericeURL = "";
+  // Lets allways keep for Production time....
 
   constructor(private http: HttpClient) { }
 
@@ -59,7 +63,7 @@ export class ProductService implements OnInit{
 
   public getAPIServiceURL() {
     console.log("webSericeURL URL : " + this.webSericeURL);
-    return this.http.get<ApiResponse>(this.webSericeURL + '/apiServiceURL');
+    return this.http.get<ApiResponse>(this.webSericeURL + '/api/apiServiceURL');
   }
 
   private extractData(res: Response) {
@@ -68,18 +72,23 @@ export class ProductService implements OnInit{
   }
 
   getProducts(): Observable<any> {
-    console.log("getProducts ----> apiServiceURL URL : " + this.apiServiceURL);
+    console.log("ProductService ----> getProducts 1 : ");
 
     return this.getAPIServiceURL().pipe(
       switchMap(apiResponse => {
         //Store this end point for future reference..
         this.apiServiceURL = apiResponse.url;
+
+        console.log("ProductService ----> getProducts 2: Before callling : " + this.apiServiceURL + '/api/product');
+
         return this.http.get(this.apiServiceURL + '/api/product' , httpOptions).pipe(map(this.extractData));
       })
     )
    }
 
-   getProduct(id): Observable<any> {
+  getProduct(id): Observable<any> {
+    console.log("ProductService  getProduct 1: " );
+
     return this.http.get(this.apiServiceURL + '/api/product/' + id, httpOptions).pipe(
       map(this.extractData));
   }

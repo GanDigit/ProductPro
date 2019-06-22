@@ -234,8 +234,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-
 
 
 
@@ -254,7 +252,8 @@ var ProductService = /** @class */ (function () {
         //To access PRODUCT APIs. The value will be initialized during ngOnInit
         this.apiServiceURL = "1111";
         //To access the current webserver url.
-        this.webSericeURL = _environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].webSericeURL;
+        //webSericeURL = environment.webSericeURL;
+        this.webSericeURL = "";
     }
     ProductService.prototype.loadEndPointURL = function () {
         var _this = this;
@@ -283,7 +282,7 @@ var ProductService = /** @class */ (function () {
     };
     ProductService.prototype.getAPIServiceURL = function () {
         console.log("webSericeURL URL : " + this.webSericeURL);
-        return this.http.get(this.webSericeURL + '/apiServiceURL');
+        return this.http.get(this.webSericeURL + '/api/apiServiceURL');
     };
     ProductService.prototype.extractData = function (res) {
         var body = res;
@@ -564,7 +563,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div class=\"container\">\n      <div class=\"row\">\n          <h4>Product List</h4>\n      </div>        \n      <div class=\"row\">\n          <div style=\"width:1200px; height:320px; overflow: auto;text-align: center;\"> \n            <table id=\"tableType1\">\n              <thead>\n                <tr>\n                  <th style=\"width:150px;\"> Id</th>\n                  <th>Category</th>\n                  <th>Name</th>\n                  <th>Price</th>\n                  <th style=\"width:10px;\">Edit</th>\n                  <th style=\"width:10px;\">Delete</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let p of products\">\n                  <td>{{p.id}}</td>\n                  <td>{{p.category}}</td>\n                  <td>{{p.name}}</td>\n                  <td>{{p.price}}</td>\n                  <td><button title=\"edit product\" (click)=\"edit(p.id)\" class=\"button buttonGray\">Edit</button></td>\n                  <td><button title=\"delete product\" (click)=\"delete(p.id)\" class=\"button buttonGray\">Delete</button></td>\n                </tr> \n              </tbody>\n            </table>\n          </div>\n      </div>\n      <br>\n      <div class=\"row\">\n          <div >\n            <button (click)=\"add()\" class=\"button buttonBlue\">Add product</button>\n          </div>\n      </div>\n    </div>\n</div>"
+module.exports = "<div>\n    <div class=\"container\">\n      <div class=\"row\">\n          <h4>Product List</h4>\n      </div>        \n      <div class=\"row\">\n          <div style=\"width:1200px; height:320px; overflow: auto;text-align: center;\"> \n            <table id=\"tableType1\">\n              <thead>\n                <tr>\n                  <th style=\"width:150px;\"> Id</th>\n                  <th>Category</th>\n                  <th>Name</th>\n                  <th>Price</th>\n                  <th style=\"width:10px;\">Edit</th>\n                  <th style=\"width:10px;\">Delete</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let p of products\">\n                  <td>{{p.id}}</td>\n                  <td>{{p.category}}</td>\n                  <td>{{p.name}}</td>\n                  <td>{{p.price}}</td>\n                  <td><button title=\"edit product\" (click)=\"edit(p.id)\" class=\"button buttonGray\">Edit</button></td>\n                  <td><button title=\"delete product\" (click)=\"delete(p.id)\" class=\"button buttonGray\">Delete</button></td>\n                </tr> \n              </tbody>\n            </table>\n          </div>\n      </div>\n      <br>\n      <div class=\"row\">\n          <div >\n          <button (click)=\"refresh()\" class=\"button buttonBlue\">Refresh</button>\n          &nbsp;&nbsp;&nbsp;\n          <button (click)=\"add()\" class=\"button buttonBlue\">Add product</button>\n          <div>\n      </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -619,6 +618,9 @@ var ProductListComponent = /** @class */ (function () {
         }, function (err) {
             console.log(err);
         });
+    };
+    ProductListComponent.prototype.refresh = function () {
+        this.router.navigate(['/product']);
     };
     ProductListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -785,7 +787,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    webSericeURL: "http://localhost:8052/"
+    webSericeURL: "http://localhost:9080/"
 };
 /*
  * For easier debugging in development mode, you can import the following file

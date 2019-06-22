@@ -24,4 +24,8 @@ export class ProductAddComponent implements OnInit {
       console.log(err);
     });
   }
+
+  cancel() {
+    this.router.navigate(['/product']);
+  }
 }
