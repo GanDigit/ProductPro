@@ -6,15 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="maven-archiver" />
         <module name="product-api" />
+        <module name="product-api-s" />
         <module name="product-web" />
+        <module name="product-web-s" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="product-api" options="-parameters" />
+      <module name="product-api-s" options="-parameters" />
       <module name="product-web" options="-parameters" />
+      <module name="product-web-s" options="-parameters" />
     </option>
   </component>
 </project>

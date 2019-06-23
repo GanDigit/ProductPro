@@ -9,9 +9,13 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.util.ErrorHandler;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.jms.ConnectionFactory;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.DELETE, RequestMethod.POST,
+        RequestMethod.OPTIONS, RequestMethod.PUT, RequestMethod.TRACE, RequestMethod.PATCH})
 @SpringBootApplication
 @EnableJms
 public class ProductApiApplication {

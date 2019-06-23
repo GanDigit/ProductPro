@@ -1,0 +1,93 @@
+# Default values for productpro-app-helm-charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# namespace
+namespace: productpro-app
+
+# URL
+apiServerUrl: https://9.121.242.180:31061
+
+# Docker image pull secret
+dockerImagePullSecretValue: eyJhdXRocyI6eyJteWNsdXN0ZXJoY2wxLmljcDo4NTAwIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6ImFkbWluIiwiZW1haWwiOiJudWxsIiwiYXV0aCI6IllXUnRhVzQ2WVdSdGFXND0ifX19
+
+replicaCountWeb: 1
+replicaCountAPI: 1
+
+# DB Properties
+dbURL: jdbc:db2://9.121.242.180:31274/jkedb
+dbUsername: db2inst
+dbPassword: <<TO_BE_REPLACED>>
+
+# Image
+imageAPI:
+  repository: myclusterhcl1.icp:8500/productpro-app/productpro-api-s
+  tag: latest
+  pullPolicy: Always
+
+imageWeb:
+  repository: myclusterhcl1.icp:8500/productpro-app/productpro-web-s
+  tag: latest
+  pullPolicy: Always
+
+# Keep the targetPort as 9080 for Websphere liberty server
+serviceWeb:
+  type: NodePort
+  targetPort: 9443
+  nodePort: 31062
+# Keep the targetPort as 9080 for Websphere liberty server
+serviceAPI:
+  type: NodePort
+  targetPort: 9443
+  nodePort: 31061
+
+# MQ Properties 1
+mqQueueManager: QM1
+mqHostName: 9.121.242.180
+mqPort: 31132
+mqUser: admin
+mqPassword: <<TO_BE_REPLACED>>
+mqQueueName: DEV.QUEUE.2
+
+# MQ Properties 2
+mqChannel: DEV.APP.SVRCONN
+mqDeadQueueName: DEV.DEAD.LETTER.QUEUE
+mqExchange: jke-exchange
+
+# Notifications
+notificationEnabled: true
+notificationFrom: admin@prodpro.com
+notificationTo: <<TO_BE_REPLACED>>
+notificationSendgridKey: <<TO_BE_REPLACED>>
+
+# ingress
+ingress:
+  enabled: true
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  path: /
+  hosts:
+    - chart-example.local
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

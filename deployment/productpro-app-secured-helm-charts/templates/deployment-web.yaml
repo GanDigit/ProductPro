@@ -1,0 +1,49 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-s-web
+  labels:
+    app: {{ template "productpro-app-secured-helm-charts.name" . }}
+    chart: {{ template "productpro-app-secured-helm-charts.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCountWeb }}
+  selector:
+    matchLabels:
+      app: {{ template "productpro-app-secured-helm-charts.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "productpro-app-secured-helm-charts.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.imageWeb.repository }}:{{ .Values.imageWeb.tag }}"
+          imagePullPolicy: {{ .Values.imageWeb.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+            - name: https
+              containerPort: 443
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          env:
+            # API server URL
+            - name: prop.api.server.url
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-s-config-map
+                  key: prop.api.server.url
+            - name: ENV_API_SERVER_URL
+              value: {{ .Values.apiServerUrl }}

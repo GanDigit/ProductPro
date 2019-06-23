@@ -1,0 +1,139 @@
+.divCell1 {
+  float: left;
+  width: 33.33%;
+}
+.divCell2 {
+  float: left;
+  width: 100px;
+}
+.divCell3 {
+  float: left;
+  width: 200px;
+}
+.divCell4 {
+  float: left;
+  width: 33.33%;
+}
+.divRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 20px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 1px 1px;
+  cursor: pointer;
+}
+
+.buttonBlue {background-color: #008CBA;} /* Blue */
+.buttonGray {background-color: #808080;} /* Blue */
+
+#tableType1, #tableType2 {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  box-align:center;
+  width:100%;
+  text-align:center;
+}
+
+#tableType1 td, #tableType1 th, #tableType2 td, #tableType2 th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableType1 tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableType1 tr:hover {background-color: #ddd;}
+
+#tableType1 th {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: left;
+  background-color: #778899;
+  color: white;
+}
+.baseCss {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 65em;
+  }
+  .baseCss li {
+    position: relative;
+    cursor: pointer;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  
+  .baseCss li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+  }
+  
+  .baseCss a {
+    color: #888;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 550px;
+  }
+  
+  .baseCss a:hover {
+    color:#607D8B;
+  }
+  
+  .baseCss .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    min-width: 16px;
+    text-align: right;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+  }
+  
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  
+  button.delete {
+    position: relative;
+    left: 800px;
+    top: -32px;
+    background-color: gray !important;
+    color: white;
+  }
+
+  /* You can add global styles to this file, and also import other style files */
+
+
+

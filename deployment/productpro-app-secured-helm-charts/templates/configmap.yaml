@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-config-map
+  labels:
+    app: {{ template "productpro-app-secured-helm-charts.name" . }}
+    chart: {{ template "productpro-app-secured-helm-charts.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+# type: Opaque
+data:
+  prop.api.server.url: {{ .Values.apiServerUrl }}
+  spring.datasource.url: {{ .Values.dbURL }}
+  spring.datasource.username: {{ .Values.dbUsername }}
+  spring.datasource.password: {{ .Values.dbPassword }}
+  spring.datasource.driver-class-name: com.ibm.db2.jcc.DB2Driver
+  ibm.mq.connName: {{ .Values.mqHostName }}({{ .Values.mqPort }})
+  ibm.mq.user: {{ .Values.mqUser }}
+  ibm.mq.password: {{ .Values.mqPassword }}
+  ibm.mq.queueName: {{ .Values.mqQueueName }}
+  ibm.mq.queueManager: {{ .Values.mqQueueManager }}
+  ibm.mq.channel: {{ .Values.mqChannel }}
+  ibm.mq.deadQueueName: {{ .Values.mqDeadQueueName }}
+  ibm.mq.exchange: {{ .Values.mqExchange }}
+  notification.enabled: {{ .Values.notificationEnabled | quote }}
+  notification.from: {{ .Values.notificationFrom }}
+  notification.to: {{ .Values.notificationTo }}
+  notification.sendgrid.key: {{ .Values.notificationSendgridKey }}

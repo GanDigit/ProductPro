@@ -1,0 +1,5 @@
+insert into product (id, name, category, price) values(1, 'Samsung TV', 'TV', 50000);
+insert into product (id, name, category, price) values(2, 'Dell', 'Monitor', 10000);
+insert into product (id, name, category, price) values(3, 'Sony TV', 'TV', 60000);
+insert into product (id, name, category, price) values(4, 'Samsung', 'Monitor', 2000);
+insert into product (id, name, category, price) values(5, 'LG TV', 'TV', 40000);

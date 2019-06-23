@@ -1,0 +1,40 @@
+<div> 
+    <div class="container">
+      <div class="row">
+          <h4>Add New Product</h4>
+      </div> 
+      <br> 
+      <div class="divRow">
+        <div class="divCell1"><p></p></div>
+        <div class="divCell2"><p>Category</p></div>
+        <div class="divCell3">
+          <input [(ngModel)]="productData.category" placeholder="Product Category"/>
+        </div>
+        <div class="divCell4"><p></p></div>
+      </div>
+       <div class="divRow">
+        <div class="divCell1"><p></p></div>
+        <div class="divCell2"><p>Name</p></div>
+        <div class="divCell3">
+          <input [(ngModel)]="productData.name" placeholder="Product Name"/>
+        </div>
+        <div class="divCell4"><p></p></div>
+      </div>
+      <div class="divRow">
+        <div class="divCell1"><p></p></div>
+        <div class="divCell2"><p>Price</p></div>
+        <div class="divCell3">
+          <input [(ngModel)]="productData.price" placeholder="Product Price"/>
+        </div>
+        <div class="divCell4"><p></p></div>
+      </div>
+      <br>
+      <div class="row">
+          <div >
+            <button (click)="addProduct()" class="button buttonBlue">Save</button>
+            <button (click)="cancel()" class="button buttonBlue">Cancel</button>
+          </div>
+      </div>
+      <br>
+    </div>
+</div>

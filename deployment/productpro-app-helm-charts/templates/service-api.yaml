@@ -13,9 +13,9 @@ spec:
   ports:
     - name: http
       protocol: TCP
+      port: 80
       nodePort: {{ .Values.serviceAPI.nodePort }}
       targetPort: {{ .Values.serviceAPI.targetPort }}
-      port: {{ .Values.serviceAPI.port }}
   selector:
     app: {{ template "productpro-app-helm-charts.name" . }}
     release: {{ .Release.Name }}

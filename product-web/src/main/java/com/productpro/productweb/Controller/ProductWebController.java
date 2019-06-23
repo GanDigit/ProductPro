@@ -35,4 +35,10 @@ public class ProductWebController {
         System.out.println("ProductWebController apiServiceURL ---> " + apiResponse.getUrl());
         return apiResponse;
     }
+
+    @GetMapping("/loginUserName")
+    private String getLoginUserName() {
+        String username = "admin";
+        return username;
+    }
 }

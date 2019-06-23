@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-s-web
+  labels:
+    app: {{ template "productpro-app-secured-helm-charts.name" . }}
+    chart: {{ template "productpro-app-secured-helm-charts.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.serviceWeb.type }}
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+    - name: https
+      nodePort: {{ .Values.serviceWeb.nodePort }}
+      targetPort: {{ .Values.serviceWeb.targetPort }}
+      port: 443
+  selector:
+    app: {{ template "productpro-app-secured-helm-charts.name" . }}
+    release: {{ .Release.Name }}

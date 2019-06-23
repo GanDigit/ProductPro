@@ -1,0 +1,147 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-api
+  labels:
+    app: {{ template "productpro-app-secured-helm-charts.name" . }}
+    chart: {{ template "productpro-app-secured-helm-charts.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCountAPI }}
+  selector:
+    matchLabels:
+      app: {{ template "productpro-app-secured-helm-charts.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "productpro-app-secured-helm-charts.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.imageAPI.repository }}:{{ .Values.imageAPI.tag }}"
+          imagePullPolicy: {{ .Values.imageAPI.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+            - name: https
+              containerPort: 443
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          env:
+            # General
+            # - name: server.port
+            #   valueFrom:
+            #     configMapKeyRef:
+            #       name: productpro-config-map
+            #       key: server.port.api
+            # DB2 Database
+            - name: spring.datasource.url
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.url
+            - name: spring.datasource.driver-class-name
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.driver-class-name
+            - name: spring.datasource.username
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.username
+            - name: spring.datasource.password
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: spring.datasource.password
+            # MQ
+            - name: ibm.mq.queueManager
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.queueManager
+            - name: ibm.mq.channel
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.channel
+            - name: ibm.mq.connName
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.connName
+            - name: ibm.mq.user
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.user
+            - name: ibm.mq.password
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.password
+            - name: ibm.mq.queueName
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.queueName
+            - name: ibm.mq.deadQueueName
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.deadQueueName
+            - name: ibm.mq.exchange
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: ibm.mq.exchange
+            - name: notification.enabled
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: notification.enabled
+            - name: notification.from
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: notification.from                  
+            - name: notification.to
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: notification.to
+            - name: ENV_NOTIFICATION_TO
+              value: {{ .Values.notificationTo }}                  
+            - name: notification.sendgrid.key
+              valueFrom:
+                configMapKeyRef:
+                  name: productpro-config-map
+                  key: notification.sendgrid.key
+            - name: ENV_NOTIFICATION_SENDGRID_KEY
+              value: {{ .Values.notificationSendgridKey }}                  
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

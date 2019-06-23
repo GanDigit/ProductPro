@@ -33,13 +33,11 @@ imageWeb:
 # Keep the targetPort as 9080 for Websphere liberty server
 serviceWeb:
   type: NodePort
-  port: 80
   targetPort: 9080
   nodePort: 31052
 # Keep the targetPort as 9080 for Websphere liberty server
 serviceAPI:
   type: NodePort
-  port: 80
   targetPort: 9080
   nodePort: 31051
 

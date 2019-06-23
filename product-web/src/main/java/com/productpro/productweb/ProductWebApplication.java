@@ -11,5 +11,4 @@ public class ProductWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductWebApplication.class, args);
 	}
-
 }
