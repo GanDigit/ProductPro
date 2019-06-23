@@ -6,5 +6,5 @@
 # helm lint productpro-web
 # helm lint productpro-api
 # cd ../../
-helm lint productpro-app-helm-charts
+helm lint productpro-app-secured-helm-charts
 

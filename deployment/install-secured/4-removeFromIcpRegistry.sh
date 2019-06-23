@@ -4,4 +4,4 @@ cd ..
 
 cloudctl login -a https://9.121.242.180:8443 --skip-ssl-validation
 
-cloudctl catalog delete-chart --name productpro-app-helm-charts
+cloudctl catalog delete-chart --name productpro-app-secured-helm-charts
