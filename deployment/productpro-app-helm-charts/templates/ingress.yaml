@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: {{ .Values.nameSpace }}
+  name: productpro-ingress
+  labels:
+    app: productpro-ingress
+spec:
+  rules:
+  - host: fyre.9.121.242.183.nip.io
+    http: 
+      paths:
+        - path: /
+          backend:
+            serviceName: productpro-web
+            servicePort: 80
+        - path: /productpro-api
+          backend:
+            serviceName: productpro-api
+            servicePort: 80

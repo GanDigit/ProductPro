@@ -4,21 +4,16 @@ metadata:
   namespace: {{ .Values.nameSpace }}
   name: productpro-web
   labels:
-    app: {{ template "productpro-app-helm-charts.name" . }}
-    chart: {{ template "productpro-app-helm-charts.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app: productpro-web
 spec:
   replicas: {{ .Values.replicaCountWeb }}
   selector:
     matchLabels:
-      app: {{ template "productpro-app-helm-charts.name" . }}
-      release: {{ .Release.Name }}
+      app: productpro-web
   template:
     metadata:
       labels:
-        app: {{ template "productpro-app-helm-charts.name" . }}
-        release: {{ .Release.Name }}
+        app: productpro-web
     spec:
       containers:
         - name: {{ .Chart.Name }}

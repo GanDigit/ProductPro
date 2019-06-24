@@ -4,10 +4,7 @@ metadata:
   namespace: {{ .Values.nameSpace }}
   name: productpro-config-map
   labels:
-    app: {{ template "productpro-app-helm-charts.name" . }}
-    chart: {{ template "productpro-app-helm-charts.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app: productpro-config-map
 # type: Opaque
 data:
   prop.api.server.url: {{ .Values.apiServerUrl }}

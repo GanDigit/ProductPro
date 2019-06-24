@@ -4,18 +4,13 @@ metadata:
   namespace: {{ .Values.nameSpace }}
   name: productpro-web
   labels:
-    app: {{ template "productpro-app-helm-charts.name" . }}
-    chart: {{ template "productpro-app-helm-charts.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app: productpro-web
 spec:
   type: {{ .Values.serviceWeb.type }}
   ports:
     - name: http
-      protocol: TCP
       port: 80
       nodePort: {{ .Values.serviceWeb.nodePort }}
       targetPort: {{ .Values.serviceWeb.targetPort }}
   selector:
-    app: {{ template "productpro-app-helm-charts.name" . }}
-    release: {{ .Release.Name }}
+    app: productpro-web
